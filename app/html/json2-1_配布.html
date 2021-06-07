@@ -20,11 +20,13 @@
   PHPから受信した値をParse（JSON.parse）した値:<br>
   <div id="output3"></div><br>
 
-  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="../js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript">
     $('#button').on('click', function () {
       alert("クリックされました");
       $('#output1').empty();
+      $('#output2').empty();
+      $('#output3').empty();
       send_ajax();
     });
     function send_ajax() {

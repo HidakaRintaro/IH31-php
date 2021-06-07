@@ -73,6 +73,9 @@
         send_data = JSON.stringify(ary_data);
         $('#button').on('click', function () {
             alert("クリックされました");
+            $('#output1').empty();
+            $('#output2').empty();
+            $('#output3').empty();
             $('#output1').append(send_data);
             send_ajax();
         });
