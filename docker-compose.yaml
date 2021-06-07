@@ -33,7 +33,7 @@ services:
     volumes:
       - ./db:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: root
     restart: always
 
   phpmyadmin:
@@ -48,4 +48,4 @@ services:
       - PMA_HOST=mariadb
       - PMA_ARBITRARY=1
       - PMA_USER=root
-      - PMA_PASSWORD=example
+      - PMA_PASSWORD=root
