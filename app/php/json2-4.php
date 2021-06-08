@@ -14,6 +14,7 @@ foreach ($data as $key => $value) {
       $string .= $details;
     }
     $current .= $key . "=" . $string . ",";
+    $data[$key] = implode("", $data[$key]);
   } else {
     $current .= $key . "=" . $value . ",";
   }
@@ -21,8 +22,5 @@ foreach ($data as $key => $value) {
 $current = rtrim($current, ",");
 $current .= "\n";
 file_put_contents($file, $current);
-
-$data["hobby"] = implode("", $data["hobby"]);
-$data["food"] = implode("", $data["food"]);
 
 echo json_encode($data);
