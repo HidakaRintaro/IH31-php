@@ -32,7 +32,7 @@
             $('#output2').empty();
             $('#output3').empty();
             $('#output1').append(send_data);
-            send_ajax();
+            send_ajax(send_data);
         });
         function form_get() {
             var ary_data = {};
@@ -42,7 +42,7 @@
             send_data = JSON.stringify(ary_data);
             return send_data;
         }
-        function send_ajax() {
+        function send_ajax(send_data) {
             $.ajax({
                 url: "../php/json2-3.php",
                 type: "GET",
