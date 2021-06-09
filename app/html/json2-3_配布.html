@@ -25,19 +25,23 @@
     <div id="output3"></div><br>
 
     <script>
-        var ary_data = {};
-        ary_data.ID = $('input[name="ID"]').val();
-        ary_data.name = $('input[name="name"]').val();
-        ary_data.gender = $('input[name="gender"]').val();
-        send_data = JSON.stringify(ary_data);
         $('#button').on('click', function () {
             alert("クリックされました");
+            const send_data = form_get();
             $('#output1').empty();
             $('#output2').empty();
             $('#output3').empty();
             $('#output1').append(send_data);
             send_ajax();
         });
+        function form_get() {
+            var ary_data = {};
+            ary_data.ID = $('input[name="ID"]').val();
+            ary_data.name = $('input[name="name"]').val();
+            ary_data.gender = $('input[name="gender"]').val();
+            send_data = JSON.stringify(ary_data);
+            return send_data;
+        }
         function send_ajax() {
             $.ajax({
                 url: "../php/json2-3.php",
